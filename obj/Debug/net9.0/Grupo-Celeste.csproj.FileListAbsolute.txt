@@ -94,3 +94,5 @@ C:\Users\rs_va\OneDrive\Desktop\Grupo-Celeste\obj\Debug\net9.0\refint\Grupo-Cele
 C:\Users\rs_va\OneDrive\Desktop\Grupo-Celeste\obj\Debug\net9.0\Grupo-Celeste.pdb
 C:\Users\rs_va\OneDrive\Desktop\Grupo-Celeste\obj\Debug\net9.0\Grupo-Celeste.genruntimeconfig.cache
 C:\Users\rs_va\OneDrive\Desktop\Grupo-Celeste\obj\Debug\net9.0\ref\Grupo-Celeste.dll
+C:\Users\rs_va\OneDrive\Desktop\Grupo-Celeste\obj\Debug\net9.0\Grupo-Celeste.sourcelink.json
+C:\Users\rs_va\OneDrive\Desktop\Grupo-Celeste\obj\Debug\net9.0\compressed\w8170u263w-eua7qiozew.gz
