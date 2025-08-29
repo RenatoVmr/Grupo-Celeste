@@ -1,6 +1,8 @@
 
+
 using Grupo_Celeste.Data;
 using Microsoft.EntityFrameworkCore;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,8 +11,15 @@ builder.Services.AddDbContext<CineTimeDbContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 builder.Services.AddControllersWithViews();
+builder.Services.AddSession(options =>
+{
+    options.IdleTimeout = TimeSpan.FromHours(2);
+    options.Cookie.HttpOnly = true;
+    options.Cookie.IsEssential = true;
+});
 builder.Services.AddScoped<Grupo_Celeste.Services.PeliculasService>();
 builder.Services.AddScoped<Grupo_Celeste.Services.CarteleraService>();
+    builder.Services.AddScoped<Grupo_Celeste.Services.AuthService>();
 
 var app = builder.Build();
 
@@ -29,6 +38,8 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
+
+app.UseSession();
 app.UseAuthorization();
 
 app.MapControllerRoute(
