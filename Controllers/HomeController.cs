@@ -7,15 +7,18 @@ namespace Grupo_Celeste.Controllers;
 public class HomeController : Controller
 {
     private readonly ILogger<HomeController> _logger;
+    private readonly Grupo_Celeste.Services.PeliculasService _peliculasService;
 
-    public HomeController(ILogger<HomeController> logger)
+    public HomeController(ILogger<HomeController> logger, Grupo_Celeste.Services.PeliculasService peliculasService)
     {
         _logger = logger;
+        _peliculasService = peliculasService;
     }
 
-    public IActionResult Index()
+    public async Task<IActionResult> Index()
     {
-        return View();
+        var peliculas = await _peliculasService.ObtenerPeliculasCarteleraAsync();
+        return View(peliculas);
     }
 
     public IActionResult Privacy()

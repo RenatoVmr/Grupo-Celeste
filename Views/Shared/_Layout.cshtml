@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - Grupo_Celeste</title>
+    <title>@ViewData["Title"] - CineTime</title>
     <script type="importmap"></script>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
@@ -13,7 +13,10 @@
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Grupo_Celeste</a>
+                <a class="navbar-brand d-flex align-items-center gap-2" asp-area="" asp-controller="Home" asp-action="Index">
+                    <img src="/images/logo-cinetime.png" alt="CineTime Logo" style="height:40px;">
+                    CineTime
+                </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -21,10 +24,19 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Inicio</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Cartelera" asp-action="Index">Cartelera</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Promociones" asp-action="Index">Promociones</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Contacto" asp-action="Index">Contacto</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Auth" asp-action="Login">Login</a>
                         </li>
                     </ul>
                 </div>
@@ -38,8 +50,16 @@
     </div>
 
     <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2025 - Grupo_Celeste - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center py-3">
+            <div>
+                &copy; 2025 - CineTime<br />
+                <small>Inspirado en Cineplanet. Proyecto académico.</small>
+            </div>
+            <div>
+                <a href="#" class="me-2"><img src="/images/facebook.svg" alt="Facebook" style="height:24px;"></a>
+                <a href="#" class="me-2"><img src="/images/instagram.svg" alt="Instagram" style="height:24px;"></a>
+                <a href="#"><img src="/images/youtube.svg" alt="YouTube" style="height:24px;"></a>
+            </div>
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
