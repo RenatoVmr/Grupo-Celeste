@@ -10,6 +10,7 @@ builder.Services.AddDbContext<CineTimeDbContext>(options =>
 
 builder.Services.AddControllersWithViews();
 builder.Services.AddScoped<Grupo_Celeste.Services.PeliculasService>();
+builder.Services.AddScoped<Grupo_Celeste.Services.CarteleraService>();
 
 var app = builder.Build();
 

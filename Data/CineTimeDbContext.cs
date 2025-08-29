@@ -7,7 +7,7 @@ namespace Grupo_Celeste.Data
     {
         public CineTimeDbContext(DbContextOptions<CineTimeDbContext> options) : base(options) { }
 
-        public DbSet<Pelicula> Peliculas { get; set; }
-        // Aquí se agregarán más DbSet para otras entidades
+    public DbSet<Pelicula> Peliculas { get; set; }
+    public DbSet<Horario> Horarios { get; set; }
     }
 }
