@@ -1,0 +1,56 @@
+@model List<Grupo_Celeste.Models.Pelicula>
+@{
+    ViewData["Title"] = "Cartelera";
+    var filtros = ViewBag.Filtros;
+}
+
+<h1 class="mb-4">Cartelera</h1>
+
+<!-- Filtros -->
+<form method="get" class="row g-3 mb-4">
+    <div class="col-md-3">
+        <input type="text" name="genero" class="form-control" placeholder="Género" value="@filtros?.genero" />
+    </div>
+    <div class="col-md-3">
+        <input type="text" name="ciudad" class="form-control" placeholder="Ciudad" value="@filtros?.ciudad" />
+    </div>
+    <div class="col-md-3">
+        <input type="text" name="cine" class="form-control" placeholder="Cine" value="@filtros?.cine" />
+    </div>
+    <div class="col-md-3">
+        <input type="date" name="fecha" class="form-control" value="@((filtros?.fecha != null ? ((DateTime)filtros.fecha).ToString("yyyy-MM-dd") : ""))" />
+    </div>
+    <div class="col-12">
+        <button type="submit" class="btn btn-primary">Filtrar</button>
+    </div>
+</form>
+
+<!-- Listado de películas -->
+<div class="row row-cols-1 row-cols-md-4 g-4">
+    @if (Model != null && Model.Count > 0)
+    {
+        foreach (var pelicula in Model)
+        {
+            <div class="col">
+                <div class="card h-100">
+                    <img src="@(pelicula.ImagenUrl ?? "/images/pelicula-demo.jpg")" class="card-img-top" alt="@pelicula.Titulo">
+                    <div class="card-body">
+                        <h5 class="card-title">@pelicula.Titulo</h5>
+                        <p class="card-text">@pelicula.Sinopsis</p>
+                        <span class="badge bg-secondary">@pelicula.Genero</span>
+                        <span class="badge bg-info">@pelicula.Clasificacion</span>
+                    </div>
+                    <div class="card-footer text-center">
+                        <a asp-controller="Cartelera" asp-action="Detalle" asp-route-id="@pelicula.Id" class="btn btn-outline-primary">Ver detalles</a>
+                    </div>
+                </div>
+            </div>
+        }
+    }
+    else
+    {
+        <div class="col">
+            <div class="alert alert-info">No hay películas en cartelera para los filtros seleccionados.</div>
+        </div>
+    }
+</div>

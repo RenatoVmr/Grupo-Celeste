@@ -1,0 +1,65 @@
+@model Grupo_Celeste.Models.Pelicula
+@{
+    ViewData["Title"] = Model.Titulo;
+}
+
+<div class="container py-4">
+    <div class="row mb-4">
+        <div class="col-md-4">
+            <img src="@(Model.ImagenUrl ?? "/images/pelicula-demo.jpg")" class="img-fluid rounded" alt="@Model.Titulo">
+        </div>
+        <div class="col-md-8">
+            <h1>@Model.Titulo</h1>
+            <p>@Model.Sinopsis</p>
+            <span class="badge bg-secondary">@Model.Genero</span>
+            <span class="badge bg-info">@Model.Clasificacion</span>
+            <hr />
+            <h5>Trailer</h5>
+            @if (!string.IsNullOrEmpty(Model.TrailerUrl))
+            {
+                <div class="ratio ratio-16x9 mb-3">
+                    <iframe src="@Model.TrailerUrl" title="Trailer @Model.Titulo" allowfullscreen></iframe>
+                </div>
+            }
+            else
+            {
+                <div class="alert alert-warning">No hay trailer disponible.</div>
+            }
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <h4>Horarios disponibles</h4>
+            @if (Model.Horarios != null && Model.Horarios.Count > 0)
+            {
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Fecha</th>
+                            <th>Hora</th>
+                            <th>Cine</th>
+                            <th>Ciudad</th>
+                            <th>Sala</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var h in Model.Horarios)
+                        {
+                            <tr>
+                                <td>@h.Fecha.ToString("dd/MM/yyyy")</td>
+                                <td>@h.Hora</td>
+                                <td>@h.Cine</td>
+                                <td>@h.Ciudad</td>
+                                <td>@h.Sala</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            }
+            else
+            {
+                <div class="alert alert-info">No hay horarios disponibles para esta película.</div>
+            }
+        </div>
+    </div>
+</div>

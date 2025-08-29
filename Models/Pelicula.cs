@@ -12,6 +12,9 @@ namespace Grupo_Celeste.Models
         public string? Clasificacion { get; set; }
         public string? ImagenUrl { get; set; }
         public string? TrailerUrl { get; set; }
-        public DateTime FechaEstreno { get; set; }
+    public DateTime FechaEstreno { get; set; }
+
+    // Relación: una película puede tener muchos horarios
+    public ICollection<Horario>? Horarios { get; set; }
     }
 }
