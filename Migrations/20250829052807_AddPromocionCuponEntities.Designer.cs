@@ -3,6 +3,7 @@ using System;
 using Grupo_Celeste.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -11,9 +12,11 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Grupo_Celeste.Migrations
 {
     [DbContext(typeof(CineTimeDbContext))]
-    partial class CineTimeDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250829052807_AddPromocionCuponEntities")]
+    partial class AddPromocionCuponEntities
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
