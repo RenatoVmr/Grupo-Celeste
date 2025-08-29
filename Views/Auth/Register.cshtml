@@ -1,0 +1,28 @@
+@{
+    ViewData["Title"] = "Registro de Cliente";
+}
+<h2>Registro de Cliente</h2>
+<form asp-action="Register" method="post" class="mt-4">
+    <div class="mb-3">
+        <label for="nombre" class="form-label">Nombre</label>
+        <input type="text" class="form-control" id="nombre" name="nombre" required />
+    </div>
+    <div class="mb-3">
+        <label for="correo" class="form-label">Correo electrónico</label>
+        <input type="email" class="form-control" id="correo" name="correo" required />
+    </div>
+    <div class="mb-3">
+        <label for="celular" class="form-label">Celular</label>
+        <input type="text" class="form-control" id="celular" name="celular" required />
+    </div>
+    <div class="mb-3">
+        <label for="password" class="form-label">Contraseña</label>
+        <input type="password" class="form-control" id="password" name="password" required />
+    </div>
+    @if (ViewBag.Error != null)
+    {
+        <div class="alert alert-danger">@ViewBag.Error</div>
+    }
+    <button type="submit" class="btn btn-primary">Registrarse</button>
+    <a asp-action="Login" class="btn btn-link">¿Ya tienes cuenta? Inicia sesión</a>
+</form>
