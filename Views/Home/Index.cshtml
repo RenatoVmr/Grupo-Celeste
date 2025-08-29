@@ -2,7 +2,50 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="container py-4">
+    <!-- Banner principal -->
+    <div class="row mb-4">
+        <div class="col-12">
+            <div class="banner-principal position-relative rounded overflow-hidden" style="height:320px;background:#222 url('/images/banner-demo.jpg') center/cover no-repeat;">
+                <div class="position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-center align-items-center text-white" style="background:rgba(0,0,0,0.4);">
+                    <h1 class="display-3 fw-bold">¡Bienvenido a CineTime!</h1>
+                    <p class="lead">Tu portal para vivir la mejor experiencia de cine</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Películas en cartelera -->
+    <div class="row mb-4">
+        <div class="col-12">
+            <h2 class="mb-3">Películas en Cartelera</h2>
+            <div class="row row-cols-1 row-cols-md-4 g-4">
+                @if (Model != null && Model.Count > 0)
+                {
+                    foreach (var pelicula in Model)
+                    {
+                        <div class="col">
+                            <div class="card h-100">
+                                <img src="@(pelicula.ImagenUrl ?? "/images/pelicula-demo.jpg")" class="card-img-top" alt="@pelicula.Titulo">
+                                <div class="card-body">
+                                    <h5 class="card-title">@pelicula.Titulo</h5>
+                                    <p class="card-text">@pelicula.Sinopsis</p>
+                                    <span class="badge bg-secondary">@pelicula.Genero</span>
+                                    <span class="badge bg-info">@pelicula.Clasificacion</span>
+                                </div>
+                                <div class="card-footer text-center">
+                                    <a href="#" class="btn btn-primary">Ver detalles</a>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                }
+                else
+                {
+                    <div class="col">
+                        <div class="alert alert-info">No hay películas en cartelera.</div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
 </div>

@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\rs_va\\OneDrive\\Desktop\\Grupo-Celeste\\Grupo-Celeste.csproj": {}
+    "C:\\Users\\Tottus Electro\\Desktop\\trabajoFinalProgramacion\\Grupo-Celeste\\Grupo-Celeste.csproj": {}
   },
   "projects": {
-    "C:\\Users\\rs_va\\OneDrive\\Desktop\\Grupo-Celeste\\Grupo-Celeste.csproj": {
+    "C:\\Users\\Tottus Electro\\Desktop\\trabajoFinalProgramacion\\Grupo-Celeste\\Grupo-Celeste.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\rs_va\\OneDrive\\Desktop\\Grupo-Celeste\\Grupo-Celeste.csproj",
+        "projectUniqueName": "C:\\Users\\Tottus Electro\\Desktop\\trabajoFinalProgramacion\\Grupo-Celeste\\Grupo-Celeste.csproj",
         "projectName": "Grupo-Celeste",
-        "projectPath": "C:\\Users\\rs_va\\OneDrive\\Desktop\\Grupo-Celeste\\Grupo-Celeste.csproj",
-        "packagesPath": "C:\\Users\\rs_va\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\rs_va\\OneDrive\\Desktop\\Grupo-Celeste\\obj\\",
+        "projectPath": "C:\\Users\\Tottus Electro\\Desktop\\trabajoFinalProgramacion\\Grupo-Celeste\\Grupo-Celeste.csproj",
+        "packagesPath": "C:\\Users\\Tottus Electro\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Tottus Electro\\Desktop\\trabajoFinalProgramacion\\Grupo-Celeste\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\rs_va\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\Tottus Electro\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
@@ -38,11 +38,23 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.300"
+        "SdkAnalysisLevel": "9.0.200"
       },
       "frameworks": {
         "net9.0": {
           "targetAlias": "net9.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[9.0.8, )"
+            },
+            "Npgsql.EntityFrameworkCore.PostgreSQL": {
+              "target": "Package",
+              "version": "[9.0.4, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -62,7 +74,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.303/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.202/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
